@@ -105,9 +105,9 @@ class CreatingResultManager {
                 document.get()
                     .addOnSuccessListener {
                         if (currentResult.host == uid) {
-                            document.update("resultByHost", image)
+                            document.update("imageByHost", image)
                         } else {
-                            document.update("resultByEnemy", image)
+                            document.update("imageByEnemy", image)
                         }
                     }
                     .addOnFailureListener() {

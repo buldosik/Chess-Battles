@@ -68,13 +68,8 @@ fun MyEventsScreen(navController: NavHostController = rememberNavController()) {
     LaunchedEffect(Unit) {
         viewModel.getGames()
     }
-    var isGameInfo by remember { mutableStateOf(false) }
     val listState = rememberLazyListState()
     val coroutineScope = rememberCoroutineScope()
-
-    val toggleGameInfo: () -> Unit = {
-        isGameInfo = !isGameInfo
-    }
 
     val onGameClick: (index: Int) -> Unit = {
         coroutineScope.launch {
@@ -122,10 +117,6 @@ fun MyEventsScreen(navController: NavHostController = rememberNavController()) {
                         EmptyItem()
                 }
             }
-        }
-
-        if (isGameInfo) {
-            InfoGameIRLCompose(viewModel = viewModel, toggleGameInfo)
         }
     }
 }

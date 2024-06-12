@@ -1,4 +1,4 @@
-package com.example.chessgo.frontend
+package com.example.chessgo.frontend.camera
 
 
 import android.Manifest
@@ -118,7 +118,7 @@ fun CameraScreen(togglePlacePicker: () -> Unit) {
                 borderColor = BorderStroke(4.dp, MaterialTheme.colorScheme.onPrimary)
             )
             ButtonFunction(
-                onClick =onSubmitClick(cameraViewModel = cameraViewModel, context = context)
+                onClick = onSubmitClick(cameraViewModel = cameraViewModel, context = context)
             , text = "Submit",
                 color = ButtonDefaults.buttonColors(
                     containerColor = MaterialTheme.colorScheme.secondary,

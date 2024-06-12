@@ -18,7 +18,7 @@ fun FirebaseUser.toUser(): Task<User> {
 
             val username = userData?.get("userName") as? String ?: ""
             val email = userData?.get("email") as? String ?: ""
-            val isModerator = userData?.get("isModerator") as? Boolean ?: false
+            val isModerator = userData?.get("moderator") as? Boolean ?: false
 
             return@continueWithTask Tasks.forResult(User(uid = userId, username = username, email = email, isModerator = isModerator))
         } else {

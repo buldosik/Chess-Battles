@@ -14,7 +14,7 @@ class GameResult (
     var imageByHost : String = "",
     var resultByEnemy : String = "",
     var imageByEnemy : String = "",
-    val isModerationNeeded : Boolean = false,
+    val moderationNeeded : Boolean = false,
     val approvesNum : Long = 0
 ) {
     companion object {
@@ -27,8 +27,9 @@ class GameResult (
             val status = document.get("status") as String
             val resultByHost = document.get("resultByHost") as String
             val imageByHost = document.get("imageByHost") as String
-            val resultByEnemy = document.get("resultByHost") as String
+            val resultByEnemy = document.get("resultByEnemy") as String
             val imageByEnemy = document.get("imageByEnemy") as String
+            val moderationNeeded = document.get("moderationNeeded") as Boolean
             val approvesNum = document.get("approvesNum") as Long
 
             return GameResult(
@@ -42,6 +43,7 @@ class GameResult (
                 imageByHost = imageByHost,
                 resultByEnemy = resultByEnemy,
                 imageByEnemy = imageByEnemy,
+                moderationNeeded = moderationNeeded,
                 approvesNum = approvesNum
             )
         }

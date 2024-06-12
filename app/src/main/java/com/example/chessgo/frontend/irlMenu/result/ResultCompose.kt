@@ -38,7 +38,7 @@ import com.example.chessgo.backend.global.ClientManager
 import com.example.chessgo.backend.global.PhotoPickerManager
 import com.example.chessgo.backend.irl.CreatingResultManager
 import com.example.chessgo.backend.registration.Results
-import com.example.chessgo.frontend.CameraScreen
+import com.example.chessgo.frontend.camera.CameraScreen
 import com.example.chessgo.frontend.navigation.navigateToMyEventsMenu
 
 private const val TAG = "ResultEvents"
@@ -140,6 +140,9 @@ fun ResultScreen(navController: NavController = rememberNavController()) {
                                 val exception = result.exception
                                 Log.w(TAG, "safeUserToStore:failure", exception)
                                 Toast.makeText(context, "Failed to safe image", Toast.LENGTH_SHORT).show()
+                            }
+                            else -> {
+                                Log.d(TAG, "PHOTO PICKER ERROR")
                             }
                         }
                     }

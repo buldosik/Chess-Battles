@@ -1,4 +1,4 @@
-package com.example.chessgo.frontend
+package com.example.chessgo.frontend.camera
 
 import android.content.Context
 import android.content.pm.PackageManager

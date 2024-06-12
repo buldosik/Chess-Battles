@@ -5,6 +5,7 @@ import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import com.example.chessgo.frontend.irlMenu.IRLMenuScreen
 import com.example.chessgo.frontend.irlMenu.creating.CreatingScreen
+import com.example.chessgo.frontend.irlMenu.moderation.ModerationScreen
 import com.example.chessgo.frontend.irlMenu.myevents.MyEventsScreen
 import com.example.chessgo.frontend.irlMenu.result.ResultScreen
 import com.example.chessgo.frontend.irlMenu.searching.SearchingScreen
@@ -41,6 +42,7 @@ sealed class Screen(val route: String) {
     object OnlineMenu : Screen("OnlineMenuScreen")
     object PrivacyPolicy: Screen("PrivacyPolicyScreen")
     object ResultMenu: Screen("ResultScreen")
+    object ModerationMenu: Screen("ModerationScreen")
 
 }
 
@@ -57,7 +59,8 @@ val screens = listOf(
     Screen.MyEventsMenu,
     Screen.OnlineMenu,
     Screen.PrivacyPolicy,
-    Screen.ResultMenu
+    Screen.ResultMenu,
+    Screen.ModerationMenu
 )
 
 @Composable
@@ -85,6 +88,7 @@ fun HandleScreen(screen: Screen, navController: NavHostController) {
         is Screen.PrivacyPolicy -> PrivacyPolicy(navController = navController)
 
         is Screen.ResultMenu -> ResultScreen(navController = navController)
+        is Screen.ModerationMenu -> ModerationScreen(navController = navController)
 
     }
 }
@@ -132,4 +136,8 @@ fun NavController.navigateToPrivacyPolicyScreen() {
 
 fun NavController.navigateToResultScreen() {
     navigate("ResultScreen")
+}
+
+fun NavController.navigateToModerationScreen() {
+    navigate("ModerationScreen")
 }
